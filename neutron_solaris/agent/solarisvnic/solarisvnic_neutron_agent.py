@@ -36,7 +36,7 @@ from neutron_solaris.solaris import net_lib
 CONF = config.CONF
 LOG = logging.getLogger(__name__)
 
-class SolarisRPCCallBack(sg_rpc.SecurityGroupAgentRpcCallbackMixin,
+class SolarisVNICRPCCallBack(sg_rpc.SecurityGroupAgentRpcCallbackMixin,
                          amb.CommonAgentManagerRpcCallBackBase):
     # Set RPC API version to 1.0 by default.
     # history
@@ -94,7 +94,7 @@ class SolarisRPCCallBack(sg_rpc.SecurityGroupAgentRpcCallbackMixin,
         self.updated_devices.add(mac)
 
 
-class SolarisNetworkManager(amb.CommonAgentManagerBase):
+class SolarisVNICNetworkManager(amb.CommonAgentManagerBase):
     def __init__(self, interface_mappings):
         self.interface_mappings = interface_mappings
         self.validate_interface_mappings()
@@ -155,7 +155,7 @@ class SolarisNetworkManager(amb.CommonAgentManagerBase):
         return constants.EXTENSION_DRIVER_TYPE
 
     def get_rpc_callbacks(self, context, agent, sg_agent):
-        return SolarisRPCCallBack(context, agent, sg_agent)
+        return SolarisVNICRPCCallBack(context, agent, sg_agent)
 
     def get_agent_api(self, **kwargs):
         pass
@@ -230,7 +230,7 @@ def main():
     validate_firewall_driver()
     interface_mappings = parse_interface_mappings()
 
-    manager = SolarisNetworkManager(interface_mappings)
+    manager = SolarisVNICNetworkManager(interface_mappings)
 
     polling_interval = CONF.AGENT.polling_interval
     quitting_rpc_timeout = CONF.AGENT.quitting_rpc_timeout

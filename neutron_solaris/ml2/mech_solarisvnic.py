@@ -25,10 +25,10 @@ from neutron_solaris import constants as s_constants
 LOG = log.getLogger(__name__)
 FLAT_VLAN = 0
 
-class SolarisMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
+class SolarisVNICMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
     """Attach to networks using Solaris VNIC agent.
 
-    The SolarisMechanismDriver integrates the ml2 plugin with the
+    The SolarisVNICMechanismDriver integrates the ml2 plugin with the
     solaris VNIC agent. Port binding with this driver requires the
     solaris VNIC agent to be running on the port's host, and that agent
     to have connectivity to at least one segment of the port's
@@ -36,7 +36,7 @@ class SolarisMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
     """
 
     def __init__(self):
-        super(SolarisMechanismDriver, self).__init__(
+        super(SolarisVNICMechanismDriver, self).__init__(
             s_constants.AGENT_TYPE_SOLARIS,
             s_constants.VIF_TYPE_SOLARIS,
             {portbindings.CAP_PORT_FILTER: False})

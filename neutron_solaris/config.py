@@ -28,7 +28,7 @@ DEFAULT_INTERFACE_MAPPINGS = []
 SOLARIS_AGENT_GROUP = cfg.OptGroup(
     SOLARIS_AGENT_GROUP_NAME,
     title='Solaris Neutron Agent Options',
-    help=('Configuration options for the neutron-solaris-agent (L2 agent).')
+    help=('Configuration options for the neutron-solarisvnic-agent (L2 agent).')
 )
 
 SOLARIS_AGENT_OPTS = [

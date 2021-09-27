@@ -26,7 +26,7 @@ Run the following command to install the agent on the system:
 
     [neutron-solaris]$  python setup.py install
 
-To use the ``neutron-solaris-agent``, the Neutron Controller will have to be
+To use the ``neutron-solarisvnic-agent``, the Neutron Controller will have to be
 properly configured. For this, the config option ``core_plugin`` in the
 ``/etc/neutron/neutron.conf`` file must be set as follows:
 
@@ -95,4 +95,4 @@ Run
 
 ::
 
-    neutron-solaris-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/solaris_agent.ini
+    neutron-solarisvnic-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/solaris_agent.ini

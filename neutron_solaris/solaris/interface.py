@@ -14,7 +14,6 @@
 #
 # @author: Girish Moodalbail, Oracle, Inc.
 
-#from openstack_common import get_ovsdb_info
 
 from oslo_config import cfg
 from oslo_log import log as logging
