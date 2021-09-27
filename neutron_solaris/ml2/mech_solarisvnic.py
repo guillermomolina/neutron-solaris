@@ -37,8 +37,8 @@ class SolarisVNICMechanismDriver(mech_agent.SimpleAgentMechanismDriverBase):
 
     def __init__(self):
         super(SolarisVNICMechanismDriver, self).__init__(
-            s_constants.AGENT_TYPE_SOLARIS,
-            s_constants.VIF_TYPE_SOLARIS,
+            s_constants.AGENT_TYPE_SOLARISVNIC,
+            s_constants.VIF_TYPE_SOLARISVNIC,
             {portbindings.CAP_PORT_FILTER: False})
         LOG.debug('__init__ called')
        

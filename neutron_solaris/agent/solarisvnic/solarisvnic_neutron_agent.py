@@ -193,14 +193,14 @@ class SolarisVNICNetworkManager(amb.CommonAgentManagerBase):
 
 
 def parse_interface_mappings():
-    if not CONF.SOLARIS.physical_interface_mappings:
+    if not CONF.SOLARISVNIC.physical_interface_mappings:
         LOG.error("No physical_interface_mappings provided, but at least "
                   "one mapping is required. Agent terminated!")
         sys.exit(1)
 
     try:
         interface_mappings = helpers.parse_mappings(
-            CONF.SOLARIS.physical_interface_mappings)
+            CONF.SOLARISVNIC.physical_interface_mappings)
         LOG.info("Interface mappings: %s", interface_mappings)
         return interface_mappings
     except ValueError as e:
@@ -236,8 +236,8 @@ def main():
     quitting_rpc_timeout = CONF.AGENT.quitting_rpc_timeout
     agent = ca.CommonAgentLoop(manager, polling_interval,
                                quitting_rpc_timeout,
-                               constants.AGENT_TYPE_SOLARIS,
-                               constants.AGENT_PROCESS_SOLARIS)
+                               constants.AGENT_TYPE_SOLARISVNIC,
+                               constants.AGENT_PROCESS_SOLARISVNIC)
     LOG.info("Agent initialized successfully, now running... ")
     launcher = service.launch(CONF, agent, restart_method='mutate')
     launcher.wait()

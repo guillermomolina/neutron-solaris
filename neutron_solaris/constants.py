@@ -15,9 +15,9 @@
 
 
 AGENT_TOPIC = 'q-agent-notifier'
-AGENT_TYPE_SOLARIS = 'Solaris agent'
-AGENT_PROCESS_SOLARIS = 'neutron-solarisvnic-agent'
-VIF_TYPE_SOLARIS = 'solaris'
+AGENT_TYPE_SOLARISVNIC = 'Solaris agent'
+AGENT_PROCESS_SOLARISVNIC = 'neutron-solarisvnic-agent'
+VIF_TYPE_SOLARISVNIC = 'solaris'
 EXTENSION_DRIVER_TYPE = 'solaris'
 
 

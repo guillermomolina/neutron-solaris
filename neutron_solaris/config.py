@@ -22,16 +22,16 @@ from neutron_solaris.common.i18n import _
 CONF = cfg.CONF
 
 
-SOLARIS_AGENT_GROUP_NAME = 'SOLARIS'
+SOLARISVNIC_AGENT_GROUP_NAME = 'SOLARISVNIC'
 DEFAULT_INTERFACE_MAPPINGS = []
 
-SOLARIS_AGENT_GROUP = cfg.OptGroup(
-    SOLARIS_AGENT_GROUP_NAME,
+SOLARISVNIC_AGENT_GROUP = cfg.OptGroup(
+    SOLARISVNIC_AGENT_GROUP_NAME,
     title='Solaris Neutron Agent Options',
     help=('Configuration options for the neutron-solarisvnic-agent (L2 agent).')
 )
 
-SOLARIS_AGENT_OPTS = [
+SOLARISVNIC_AGENT_OPTS = [
     cfg.ListOpt('physical_interface_mappings',
                 default=DEFAULT_INTERFACE_MAPPINGS,
                 help=_("Comma-separated list of "
@@ -46,7 +46,7 @@ SOLARIS_AGENT_OPTS = [
 
 
 ALL_OPTS = [
-    (SOLARIS_AGENT_GROUP, SOLARIS_AGENT_OPTS)
+    (SOLARISVNIC_AGENT_GROUP, SOLARISVNIC_AGENT_OPTS)
 ]
 
 
