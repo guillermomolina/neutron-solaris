@@ -14,7 +14,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from keystoneauth1 import loading as ks_loading
 from oslo_config import cfg
 
 from neutron_solaris.common.i18n import _
