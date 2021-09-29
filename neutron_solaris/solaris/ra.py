@@ -1,5 +1,4 @@
-# vim: tabstop=4 shiftwidth=4 softtabstop=4
-
+# Copyright 2021, Guillermo Adrian Molina.
 # Copyright 2014 OpenStack Foundation
 # All Rights Reserved.
 #
